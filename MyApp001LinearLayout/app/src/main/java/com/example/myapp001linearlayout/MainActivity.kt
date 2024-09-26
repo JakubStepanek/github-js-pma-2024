@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
             val city = cityEditText.text.toString()
             val age = ageEditText.text.toString()
 
-            resultTextView.text = "Jmenuji se $name $surname. Mé bydliště je $city a je mi $age."
+            resultTextView.text = "Moje jméno je $name $surname. Mé bydliště je $city a je mi $age."
         }
 
         // onClick button delete
