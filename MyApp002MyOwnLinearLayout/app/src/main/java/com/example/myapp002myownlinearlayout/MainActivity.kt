@@ -1,15 +1,15 @@
 package com.example.myapp002myownlinearlayout
 
-import android.graphics.Color
+import android.R.attr.data
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,10 +34,20 @@ class MainActivity : AppCompatActivity() {
             // načtení hodnoty ze vstupních polí
             var height = etHeight.text.toString().toFloat()
             var weight = etWeight.text.toString().toFloat()
-            // výpočet BMI a zobrazení výsledku
-            var bmi = calculateBMI(height, weight)
-            tvBMIResult.text = bmi.toString()
-            tvBMIMessage.text = ""
+            if (height <= 0) {
+                Toast.makeText(
+                    this, "Výška musí být vyplněna a větší než 0 cm!", Toast.LENGTH_LONG
+                ).show()
+            } else if (weight <= 0) {
+                Toast.makeText(
+                    this, "Hmotnost musí být vyplněna a větší než 0 kg!", Toast.LENGTH_LONG
+                ).show()
+            } else {
+                // výpočet BMI a zobrazení výsledku
+                var bmi = calculateBMI(height, weight)
+                tvBMIResult.text = bmi.toString()
+                tvBMIMessage.text = ""
+            }
         }
         // výpis pochvaly
         btnCommend.setOnClickListener {
