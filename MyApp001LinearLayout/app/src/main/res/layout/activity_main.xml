@@ -68,11 +68,11 @@
             android:id="@+id/btnSend"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
+            android:layout_marginEnd="10dp"
             android:layout_weight="4"
             android:backgroundTint="@color/myColor01"
-            android:text="Odeslat"
-            android:textSize="10dp" />
+            android:text="@string/btn_send"
+            android:textSize="14sp" />
 
         <Button
             android:id="@+id/btnDelete"
@@ -80,8 +80,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="4"
             android:backgroundTint="@color/myColor02"
-            android:text="Vymazat"
-            android:textSize="10dp" />
+            android:text="@string/btn_delete"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
 
     </LinearLayout>
 
@@ -90,8 +91,11 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_marginTop="20dp"
+        android:background="@color/myColor03"
         android:hint="Výsledek"
         android:padding="20dp"
-        android:textSize="20dp" />
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="20sp" />
 
 </LinearLayout>
