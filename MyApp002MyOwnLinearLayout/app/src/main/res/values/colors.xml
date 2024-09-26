@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="btnTextColor">#FFFFFFFF</color>
+    <color name="btnBackgroundColor">#1F2023</color>
+    <color name="btnHoverColor">#FFFFFFFF</color>
+    <color name="underweight">#00BCD4</color>
+    <color name="normal_weight">#4CAF50</color>
+    <color name="overweight">#FF9800</color>
+    <color name="obese">#FF0000</color>
+</resources>

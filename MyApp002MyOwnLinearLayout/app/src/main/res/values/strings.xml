@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MyApp002MyOwnLinearLayout</string>
+    <string name="app_heading">BMI kalkulačka</string>
+    <string name="btn_calculate">Vypočítej</string>
+    <string name="btn_commend">Pochval mě!</string>
+    <string name="et_height_hint">Výška v centimetrech</string>
+    <string name="et_weight_hint">Hmotnost v kilogramech</string>
+    <string name="tv_result">"0.0"</string>
+</resources>
