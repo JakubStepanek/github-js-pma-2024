@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.myapp004objednavka"
+    namespace = "com.example.myapp003objednavka"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.myapp004objednavka"
+        applicationId = "com.example.myapp003objednavka"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -33,11 +33,13 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-    //modification for using viewBinding
+    // modification for using viewBinding
     buildFeatures {
         viewBinding = true
     }
 }
+
+
 
 dependencies {
 

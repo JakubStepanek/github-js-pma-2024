@@ -1,6 +1,5 @@
-package com.example.myapp004objednavka
+package com.example.myapp003objednavka
 
-import android.os.Build.VERSION_CODES.R
 import android.os.Bundle
 import android.widget.RadioButton
 import android.widget.RadioGroup
@@ -8,20 +7,22 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.myapp004objednavka.databinding.ActivityMainBinding
+import com.example.myapp003objednavka.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+
     private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
+        // enableEdgeToEdge()
 
-        //binding settings
+
+        // binding settings
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        title = "Objednávka Motocyklu"
+        title = "Objednávka motocyklu"
 
         binding.btnSubmit.setOnClickListener {
             // get id of checked radiobutton
@@ -39,15 +40,19 @@ class MainActivity : AppCompatActivity() {
                     (if (racingPacket) "; krutopřísný paket" else "")
             binding.tvOrder.text = orderText
         }
-        // image change on selected radio button
-        binding.rbMotorcycle1.setOnClickListener{
-            binding.ivMotorcycle.setImageResource(R.drawable.panigale_v2.png)
+
+        // Changing the image based on the selected radio button
+
+        binding.rbMotorcycle1.setOnClickListener {
+            binding.ivMotorcycle.setImageResource(R.drawable.panigale_v2)
         }
-        binding.rbMotorcycle2.setOnClickListener{
-            binding.ivMotorcycle.setImageResource(R.drawable.panigale_v4.png)
+
+        binding.rbMotorcycle2.setOnClickListener {
+            binding.ivMotorcycle.setImageResource(R.drawable.panigale_v4)
         }
-        binding.rbMotorcycle3.setOnClickListener{
-            binding.ivMotorcycle.setImageResource(R.drawable.panigale_v4_r.png)
+
+        binding.rbMotorcycle3.setOnClickListener {
+            binding.ivMotorcycle.setImageResource(R.drawable.panigale_v4_r)
         }
     }
 }
