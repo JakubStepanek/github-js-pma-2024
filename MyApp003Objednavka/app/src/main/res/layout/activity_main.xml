@@ -1,19 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20sp"
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/tvHeading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Jakou motorku se chcete objednat?"
+        android:textAlignment="center" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <RadioGroup
+        android:id="@+id/rgMotorcycles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rbMotorcycle1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Panigale V2" />
+
+        <RadioButton
+            android:id="@+id/rbMotorcycle2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Panigale V4" />
+
+        <RadioButton
+            android:id="@+id/rbMotorcycle3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Panigale V4 R" />
+
+    </RadioGroup>
+
+    <CheckBox
+        android:id="@+id/cbElectricSuspension"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Elektronický podvozek" />
+
+    <CheckBox
+        android:id="@+id/cbSeat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lepší sedlo" />
+
+    <CheckBox
+        android:id="@+id/cbRacingPacket"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Závodnický paket" />
+
+    <TextView
+        android:id="@+id/tvOrder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Souhrn objednávky: " />
+
+    <ImageView
+        android:id="@+id/ivMotorcycle"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/panigale_v2" />
+    
+</LinearLayout>
