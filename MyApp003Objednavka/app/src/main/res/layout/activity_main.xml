@@ -5,41 +5,64 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F7F7F7"
     android:orientation="vertical"
-    android:padding="20sp"
+    android:padding="16dp"
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/tvHeading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Jakou motorku se chcete objednat?"
+        android:layout_gravity="center"
+        android:text="Jakou motorku si chcete objednat?"
+        android:textColor="#DA291C"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:paddingBottom="16dp"
+        android:fontFamily="sans-serif-black"
         android:textAlignment="center" />
 
     <RadioGroup
         android:id="@+id/rgMotorcycles"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:padding="8dp">
 
         <RadioButton
             android:id="@+id/rbMotorcycle1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:buttonTint="#DA291C"
             android:checked="true"
-            android:text="Panigale V2" />
+            android:text="Panigale V2"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:layout_marginRight="10dp"
+            android:fontFamily="sans-serif-medium" />
 
         <RadioButton
             android:id="@+id/rbMotorcycle2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Panigale V4" />
+            android:buttonTint="#DA291C"
+            android:text="Panigale V4"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:layout_marginRight="10dp"
+            android:fontFamily="sans-serif-medium" />
 
         <RadioButton
             android:id="@+id/rbMotorcycle3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Panigale V4 R" />
+            android:buttonTint="#DA291C"
+            android:text="Panigale V4 R"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif-medium" />
 
     </RadioGroup>
 
@@ -47,31 +70,68 @@
         android:id="@+id/cbElectricSuspension"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Elektronický podvozek" />
+        android:buttonTint="#DA291C"
+        android:text="Elektronický podvozek"
+        android:textColor="#555555"
+        android:textSize="16sp"
+        android:padding="8dp"
+        android:fontFamily="sans-serif-light" />
 
     <CheckBox
         android:id="@+id/cbSeat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Lepší sedlo" />
+        android:buttonTint="#DA291C"
+        android:text="Lepší sedlo"
+        android:textColor="#555555"
+        android:textSize="16sp"
+        android:padding="8dp"
+        android:fontFamily="sans-serif-light" />
 
     <CheckBox
         android:id="@+id/cbRacingPacket"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Závodnický paket" />
+        android:buttonTint="#DA291C"
+        android:text="Závodnický paket"
+        android:textColor="#555555"
+        android:textSize="16sp"
+        android:padding="8dp"
+        android:fontFamily="sans-serif-light" />
+
+    <Button
+        android:id="@+id/btnSubmit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:backgroundTint="#DA291C"
+        android:text="Objednat motoyckl"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-medium" />
 
     <TextView
         android:id="@+id/tvOrder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Souhrn objednávky: " />
+        android:text="Souhrn objednávky:"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:paddingTop="16dp"
+        android:fontFamily="sans-serif-medium" />
 
     <ImageView
         android:id="@+id/ivMotorcycle"
         android:layout_width="match_parent"
         android:layout_height="200dp"
+        android:layout_marginTop="16dp"
         android:scaleType="centerInside"
         android:src="@drawable/panigale_v2" />
-    
+
 </LinearLayout>
