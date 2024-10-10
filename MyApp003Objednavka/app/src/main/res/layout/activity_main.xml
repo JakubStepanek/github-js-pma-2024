@@ -8,7 +8,12 @@
     android:background="#F7F7F7"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context=".MainActivity">
+    tools:context=".App">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true" />
 
     <TextView
         android:id="@+id/tvHeading"
@@ -131,5 +136,6 @@
         android:layout_marginTop="16dp"
         android:scaleType="centerInside"
         android:src="@drawable/panigale_v2" />
+
 
 </LinearLayout>
