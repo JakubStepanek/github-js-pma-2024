@@ -11,6 +11,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import java.util.regex.Pattern
 
 
 class MainActivity : ComponentActivity() {
@@ -18,6 +19,8 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             ComposePerson()
+
+
         }
     }
 }
@@ -53,36 +56,33 @@ fun ComposePerson() {
     // Stavy pro jednotlivé textové vstupy
     var name by remember { mutableStateOf("") }
     var surname by remember { mutableStateOf("") }
+    var hobby by remember { mutableStateOf("") }
     var age by remember { mutableStateOf("") }
+    var childrenNumber by remember { mutableStateOf("") }
     var place by remember { mutableStateOf("") }
     var resultText by remember { mutableStateOf("") }
 
     // Přidáme Scaffold, abychom mohli přidat TopAppBar
-    Scaffold(
-        topBar = {
-            //center text in top bar
-            CenterAlignedTopAppBar(
-                title = {
-                    Text(
-                        "Moje Aplikace - Osoba",
-                        color = Color.White,
-                        textAlign = TextAlign.Center
-                    )
-                }, // Nastaví barvu textu na bílou
-                colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
-                    containerColor = Color.DarkGray,  // Nastaví pozadí na tmavě šedé
-                    //titleContentColor = Color.White // Nastaví barvu textu na bílou
+    Scaffold(topBar = {
+        //center text in top bar
+        CenterAlignedTopAppBar(
+            title = {
+                Text(
+                    "Moje Aplikace - Osoba", color = Color.White, textAlign = TextAlign.Center
                 )
+            }, // Nastaví barvu textu na bílou
+            colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
+                containerColor = Color.DarkGray,  // Nastaví pozadí na tmavě šedé
+                //titleContentColor = Color.White // Nastaví barvu textu na bílou
             )
-        }
-    ) { innerPadding ->
+        )
+    }) { innerPadding ->
         // Zbytek obsahu se vykresluje uvnitř Scaffold s paddingem
         Column(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(innerPadding)  // padding kolem obsahu
-                .padding(16.dp),
-            verticalArrangement = Arrangement.spacedBy(16.dp)
+                .padding(16.dp), verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
             // Textová pole pro vstupy
             OutlinedTextField(
@@ -98,6 +98,13 @@ fun ComposePerson() {
                 modifier = Modifier.fillMaxWidth()
             )
             OutlinedTextField(
+                value = hobby,
+                onValueChange = { hobby = it },
+                label = { Text("Koníčky") },
+                modifier = Modifier.fillMaxWidth()
+            )
+
+            OutlinedTextField(
                 value = age,
                 onValueChange = {
                     // Omezíme vstup na číslice a kontrolujeme, že číslo není větší než 150
@@ -109,6 +116,15 @@ fun ComposePerson() {
                 label = { Text("Věk (hodnota menší než 124)") },
                 modifier = Modifier.fillMaxWidth()
             )
+            OutlinedTextField(
+                value = childrenNumber,
+                onValueChange = {
+                    if (it.all { char -> char.isDigit() }) {
+                        childrenNumber = it
+                    }
+                }, label = { Text("Počet dětí") }, modifier = Modifier.fillMaxWidth()
+            )
+
             OutlinedTextField(
                 value = place,
                 onValueChange = { place = it },
@@ -124,9 +140,8 @@ fun ComposePerson() {
                 Button(
                     onClick = {
                         resultText =
-                            "Jmenuji se $name $surname. Je mi $age let a moje bydliště je $place."
-                    },
-                    modifier = Modifier.weight(1f)
+                            "Jmenuji se $name $surname a jsem z $hobby. Je mi $age let a moje bydliště je $place. Mám $childrenNumber dětí"
+                    }, modifier = Modifier.weight(1f)
                 ) {
                     Text("Odeslat")
                 }
@@ -135,12 +150,12 @@ fun ComposePerson() {
                     onClick = {
                         name = ""
                         surname = ""
+                        hobby = ""
                         age = ""
+                        childrenNumber = ""
                         place = ""
                         resultText = ""
-                    },
-                    modifier = Modifier.weight(1f),
-                    colors = ButtonDefaults.buttonColors(
+                    }, modifier = Modifier.weight(1f), colors = ButtonDefaults.buttonColors(
                         containerColor = Color(0xFFFF0000),  // Hexadecimální barva pro pozadí tlačítka
                         contentColor = Color.White  // Barva textu na tlačítku
                     )
