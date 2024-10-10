@@ -60,6 +60,7 @@ fun ComposePerson() {
     // Přidáme Scaffold, abychom mohli přidat TopAppBar
     Scaffold(
         topBar = {
+            //center text in top bar
             CenterAlignedTopAppBar(
                 title = {
                     Text(
