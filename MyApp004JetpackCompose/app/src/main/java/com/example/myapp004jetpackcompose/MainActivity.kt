@@ -8,6 +8,7 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
@@ -59,15 +60,16 @@ fun ComposePerson() {
     // Přidáme Scaffold, abychom mohli přidat TopAppBar
     Scaffold(
         topBar = {
-            TopAppBar(
+            CenterAlignedTopAppBar(
                 title = {
                     Text(
-                        "Moje Aplikace",
-                        color = Color.White
+                        "Moje Aplikace - Osoba",
+                        color = Color.White,
+                        textAlign = TextAlign.Center
                     )
                 }, // Nastaví barvu textu na bílou
                 colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
-                    containerColor = Color.DarkGray,  // Nastaví pozadí na černé
+                    containerColor = Color.DarkGray,  // Nastaví pozadí na tmavě šedé
                     //titleContentColor = Color.White // Nastaví barvu textu na bílou
                 )
             )
@@ -99,11 +101,11 @@ fun ComposePerson() {
                 onValueChange = {
                     // Omezíme vstup na číslice a kontrolujeme, že číslo není větší než 150
                     if (it.all { char -> char.isDigit() } && it.toIntOrNull()
-                            ?.let { it <= 150 } == true) {
+                            ?.let { it <= 123 } == true) {
                         age = it
                     }
                 },
-                label = { Text("Věk (hodnota menší než 151)") },
+                label = { Text("Věk (hodnota menší než 124)") },
                 modifier = Modifier.fillMaxWidth()
             )
             OutlinedTextField(
