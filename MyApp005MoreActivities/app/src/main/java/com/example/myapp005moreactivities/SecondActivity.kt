@@ -19,11 +19,13 @@ class SecondActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_main)
 
-        title = "Sekundární aktivita"
-
         // binding settings
         binding = ActivitySecondBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        // title setup
+        title = "Sekundární aktivita"
+        binding.tvTitle.text = title
 
         val nickname = intent.getStringExtra("USER_NICKNAME")
         binding.tvInfo.text = "Data z první aktivity. Přezdívka: $nickname"

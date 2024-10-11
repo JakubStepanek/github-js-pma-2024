@@ -18,13 +18,13 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_main)
 
-        // TODO: add title
-        title = "Hlavní aktivita"
-
-
         // binding settings
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        //title setup
+        title = "Hlavní aktivita"
+        binding.tvTitle.text = title
 
         binding.btnSecondSection.setOnClickListener {
             val nickname = binding.etNickname.text.toString()

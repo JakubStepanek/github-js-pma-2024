@@ -15,11 +15,15 @@ class ThirdActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_third)
 
-        title = "Třetí aktivita"
 
         //binding settings
         binding = ActivityThirdBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        //title setup
+        title = "Třetí aktivita"
+        binding.tvTitle.text = title
+
 
         val nickname = intent.getStringExtra("USER_NICKNAME")
         val favouriteWord = intent.getStringExtra("USER_FAVOURITE_WORD")
