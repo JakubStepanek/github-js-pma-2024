@@ -18,7 +18,9 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_main)
 
+        // TODO: add title
         title = "Hlavní aktivita"
+
 
         // binding settings
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -31,15 +33,8 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-//        val btnSecondActivity = findViewById<Button>(R.id.btnSecondSection)
-//        val etNickname = findViewById<EditText>(R.id.etNickname)
-//
-//        btnSecondActivity.setOnClickListener {
-//            val nickname = etNickname.text.toString()
-//            val intent = Intent(this, SecondActivity::class.java)
-//            intent.putExtra("USER_NICKNAME", nickname)
-//            startActivity(intent)
-//        }
-
+        binding.btnClearData.setOnClickListener {
+            binding.etNickname.text.clear()
+        }
     }
 }

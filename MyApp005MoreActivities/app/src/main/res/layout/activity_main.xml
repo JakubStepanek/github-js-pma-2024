@@ -8,6 +8,7 @@
     android:orientation="vertical"
     android:padding="16sp"
     tools:context=".MainActivity">
+    
 
     <EditText
         android:id="@+id/etNickname"
@@ -15,9 +16,28 @@
         android:layout_height="wrap_content"
         android:hint="Zadejte přezdívku" />
 
-    <Button
-        android:id="@+id/btnSecondSection"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Odeslat data" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnSecondSection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Odeslat data" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"></Space>
+
+        <Button
+            android:id="@+id/btnClearData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Vymazat data" />
+
+    </LinearLayout>
 </LinearLayout>

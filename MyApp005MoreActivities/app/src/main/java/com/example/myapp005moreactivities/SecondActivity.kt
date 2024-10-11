@@ -28,22 +28,18 @@ class SecondActivity : AppCompatActivity() {
         val nickname = intent.getStringExtra("USER_NICKNAME")
         binding.tvInfo.text = "Data z první aktivity. Přezdívka: $nickname"
 
+        binding.btnThirdSection.setOnClickListener {
+            val intent = Intent(this, ThirdActivity::class.java)
+            intent.putExtra("USER_NICKNAME", nickname)
+            intent.putExtra("USER_FAVOURITE_WORD", binding.etFavouriteWord.text.toString())
+            startActivity(intent)
+        }
+
         binding.btnClose.setOnClickListener {
             finish()
         }
+        binding.btnClearData.setOnClickListener {
+            binding.etFavouriteWord.text.clear()
+        }
     }
 }
-
-
-//        val tvInfo = findViewById<TextView>(R.id.tvInfo)
-//        // get data from Intent
-//        val nickname = intent.getStringExtra("USER_NICKNAME")
-//        tvInfo.text = "Data z první aktivity. Přezdívka: $nickname"
-//
-//        val btnClose = findViewById<Button>(R.id.btnClose)
-//        btnClose.setOnClickListener {
-//            finish()
-//        }
-//
-//        val btnThirdActivity = findViewById<Button>(R.id.btnThirdSection)
-//    }

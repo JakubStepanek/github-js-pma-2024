@@ -15,15 +15,41 @@
         android:layout_height="wrap_content"
         android:text="Data z první aktivity. Přezdívka: " />
 
-    <Button
-        android:id="@+id/btnThirdSection"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/etFavouriteWord"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Třetí aktivita" />
+        android:hint="Zadejte oblíbené slovo" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnThirdSection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Třetí aktivita" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"></Space>
+
+        <Button
+            android:id="@+id/btnClearData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Vymazat data" />
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/btnClose"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Zavřít aktivitu" />
 </LinearLayout>
