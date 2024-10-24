@@ -1,4 +1,4 @@
-package com.example.myapp007bfragmentsexample1
+package com.example.myapp008bfragmentsexample1
 
 import org.junit.Test
 

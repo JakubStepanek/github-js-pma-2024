@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.myapp007bfragmentsexample1"
+    namespace = "com.example.myapp008bfragmentsexample1"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.myapp007bfragmentsexample1"
+        applicationId = "com.example.myapp008bfragmentsexample1"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -27,14 +27,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = "11"
-    }
-    buildFeatures {
-        viewBinding = true
+        jvmTarget = "1.8"
     }
 }
 
