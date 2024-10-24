@@ -1,10 +1,8 @@
 package com.example.myapp007afragments
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import androidx.fragment.app.Fragment
 import com.example.myapp007afragments.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -14,8 +12,27 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-    //setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
+        binding.btnFragment1.setOnClickListener {
+            replaceFragment(Fragment1())
+        }
 
+        binding.btnFragment2.setOnClickListener {
+            replaceFragment(Fragment2())
+        }
+
+    }
+
+    private fun replaceFragment(fragment: Fragment) {
+        // gets instance of fragment manager
+        val fragmentManager = supportFragmentManager
+        // create a new transaction with fragments
+        val fragmentTransaction = fragmentManager.beginTransaction()
+        // replace the fragment in Container with new one
+        fragmentTransaction.replace(binding.fragmentContainer.id, fragment)
+        // commit the transaction
+        fragmentTransaction.commit()
     }
 }
