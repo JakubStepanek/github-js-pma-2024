@@ -14,7 +14,7 @@ class PlayActivity : AppCompatActivity() {
 
         val addition = findViewById<ImageView>(R.id.addition)
         val sub = findViewById<ImageView>(R.id.sub)
-        val multi = findViewById<ImageView>(R.id.multi)
+        val multi = findViewById<ImageView>(R. id.multi)
         val division = findViewById<ImageView>(R.id.division)
 
         addition.setOnClickListener {

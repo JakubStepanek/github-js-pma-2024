@@ -2,64 +2,63 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:layout_gravity="center"
-    android:gravity="center">
+    android:gravity="center"
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Konec Hry"
         android:layout_marginTop="50dp"
+        android:text="Konec Hry"
         android:textColor="#9A1818"
-        android:textSize="36sp"/>
+        android:textSize="36sp" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Získané body: "
         android:layout_marginTop="36dp"
+        android:text="Získané body: "
         android:textColor="#9A1818"
-        android:textSize="24sp"/>
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/FinalScoreTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="0 / 0"
         android:layout_marginTop="40dp"
         android:layout_marginBottom="40dp"
+        android:background="#FFE082"
+        android:text="0 / 0"
         android:textColor="#9A1818"
-        android:textSize="30sp"
-        android:background="#FFE082"/>
+        android:textSize="30sp" />
 
     <LinearLayout
-        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="center"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/buttonPlayAgain"
-            android:layout_margin="10dp"
-            android:text="Hrát znovu"
-            android:textAllCaps="false"
-            android:backgroundTint="#FF1B69"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:backgroundTint="#FF1B69"
+            android:text="Hrát znovu"
+            android:textAllCaps="false" />
 
         <Button
             android:id="@+id/buttonBack"
-            android:layout_margin="10dp"
-            android:text="Zpět"
-            android:textAllCaps="false"
-            android:backgroundTint="#84E5ED"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:backgroundTint="#84E5ED"
+            android:text="Zpět"
+            android:textAllCaps="false" />
 
 
     </LinearLayout>
