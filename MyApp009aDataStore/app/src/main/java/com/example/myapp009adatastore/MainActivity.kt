@@ -85,7 +85,7 @@ fun UserForm() {
                 onCheckedChange = { isChecked = it }
             )
             Text(
-                "Potvrzení, že jsem starší 18 let."
+                "Potvrzuji, že jsem starší 18 let."
             )
         }
         Row() {
