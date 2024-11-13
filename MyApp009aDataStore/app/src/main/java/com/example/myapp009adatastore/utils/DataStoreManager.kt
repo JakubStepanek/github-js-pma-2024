@@ -11,6 +11,7 @@ import androidx.datastore.preferences.preferencesDataStore
 import com.example.myapp009adatastore.model.UserDetails
 import kotlinx.coroutines.flow.map
 
+
 const val USER_DATASTORE = "user_data"
 
 val Context.preferenceDataStore: DataStore<Preferences> by preferencesDataStore(name = USER_DATASTORE)
@@ -18,24 +19,24 @@ val Context.preferenceDataStore: DataStore<Preferences> by preferencesDataStore(
 class DataStoreManager(val context: Context) {
 
     companion object {
-        val USER_NAME = stringPreferencesKey("USER_NAME")
+        val NAME = stringPreferencesKey("NAME")
         val AGE = intPreferencesKey("AGE")
-        val IS_CHECKBOX_CHECKED = booleanPreferencesKey("IS_CHECKBOX_CHECKED")
+        val AGREEMENT = booleanPreferencesKey("AGREEMENT")
     }
 
     suspend fun saveToDataStore(userDetails: UserDetails) {
         context.preferenceDataStore.edit {
-            it[USER_NAME] = userDetails.name
+            it[NAME] = userDetails.name
             it[AGE] = userDetails.age
-            it[IS_CHECKBOX_CHECKED] = userDetails.ageCheckboxChecked
+            it[AGREEMENT] = userDetails.agreement
         }
     }
 
     fun getFromDataStore() = context.preferenceDataStore.data.map {
         UserDetails(
-            name = it[USER_NAME] ?: "",
+            name = it[NAME] ?: "",
             age = it[AGE] ?: 0,
-            ageCheckboxChecked = it[IS_CHECKBOX_CHECKED] ?: false
+            agreement = it[AGREEMENT] ?: false
         )
     }
 

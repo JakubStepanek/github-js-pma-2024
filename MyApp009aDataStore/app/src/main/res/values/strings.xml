@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MyApp009aDataStore</string>
+    <string name="login_heading_text">Please enter the Details</string>
 </resources>
