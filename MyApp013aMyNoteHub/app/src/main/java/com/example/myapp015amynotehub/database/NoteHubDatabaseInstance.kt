@@ -1,18 +1,13 @@
-package com.example.myapp013amynotehub
-
+package com.example.myapp015amynotehub.database
 
 import android.content.Context
 import androidx.room.Room
 
 object NoteHubDatabaseInstance {
-
-    // Lazy inicializace instance databáze
     @Volatile
     private var INSTANCE: NoteHubDatabase? = null
 
-    // Funkce pro získání instance databáze
     fun getDatabase(context: Context): NoteHubDatabase {
-        // Pokud je instance null, inicializuje ji
         return INSTANCE ?: synchronized(this) {
             val instance = Room.databaseBuilder(
                 context.applicationContext,
@@ -23,5 +18,4 @@ object NoteHubDatabaseInstance {
             instance
         }
     }
-
 }
