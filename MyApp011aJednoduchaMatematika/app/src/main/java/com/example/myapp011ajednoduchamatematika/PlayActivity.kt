@@ -4,24 +4,25 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
-import com.example.myapp011ajednoduchamatematika.databinding.ActivityMainBinding
 import com.example.myapp011ajednoduchamatematika.databinding.ActivityPlayBinding
-import com.example.myapp011ajednoduchamatematika.databinding.WinLayoutBinding
+
 
 class PlayActivity : AppCompatActivity() {
     private lateinit var bindingPlay: ActivityPlayBinding
-    private lateinit var bindingMain: ActivityMainBinding
-    private lateinit var bindingWin: WinLayoutBinding
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setContentView(R.layout.activity_play)
+        bindingPlay = ActivityPlayBinding.inflate(layoutInflater)
 
-        val addition = findViewById<ImageView>(R.id.addition)
-        val sub = findViewById<ImageView>(R.id.sub)
-        val multi = findViewById<ImageView>(R.id.multi)
-        val division = findViewById<ImageView>(R.id.division)
+        setContentView(bindingPlay.root)
+
+        // Instanční inicializace
+        val addition = bindingPlay.addition
+        val sub = bindingPlay.sub
+        val multi = bindingPlay.multi
+        val division = bindingPlay.division
 
         addition.setOnClickListener {
             val calInt = Intent(this@PlayActivity, MainActivity::class.java)

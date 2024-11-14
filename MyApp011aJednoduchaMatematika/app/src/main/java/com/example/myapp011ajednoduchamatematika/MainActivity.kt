@@ -8,9 +8,16 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import com.example.myapp011ajednoduchamatematika.databinding.ActivityMainBinding
+import com.example.myapp011ajednoduchamatematika.databinding.ActivityPlayBinding
+import com.example.myapp011ajednoduchamatematika.databinding.WinLayoutBinding
+import kotlin.compareTo
 import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var bindingMain: ActivityMainBinding
+    private lateinit var bindingWin: WinLayoutBinding
 
     var TimeTextView: TextView? = null
     var QuestionTextText: TextView? = null
@@ -34,21 +41,25 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setContentView(R.layout.activity_main)
+        bindingMain = ActivityMainBinding.inflate(layoutInflater)
+
+        setContentView(bindingMain.root)
 
         val calInt = intent.getStringExtra("cals")
         cals = calInt!!
-        TimeTextView = findViewById(R.id.TimeTextView)
-        QuestionTextText = findViewById(R.id.QuestionTextText)
-        ScoreTextView = findViewById(R.id.ScoreTextView)
-        AlertTextView = findViewById(R.id.AlertTextView)
-        //FinalScoreTextView = findViewById(R.id.FinalScoreTextView)
-        btn0 = findViewById(R.id.button0)
-        btn1 = findViewById(R.id.button1)
-        btn2 = findViewById(R.id.button2)
-        btn3 = findViewById(R.id.button3)
+        TimeTextView = bindingMain.TimeTextView
+        QuestionTextText = bindingMain.QuestionTextText
+        ScoreTextView = bindingMain.ScoreTextView
+        AlertTextView = bindingMain.AlertTextView
 
-        start()
+
+        //FinalScoreTextView = findViewById(R.id.FinalScoreTextView)
+        btn0 = bindingMain.button0
+        btn1 = bindingMain.button1
+        btn2 = bindingMain.button2
+        btn3 = bindingMain.button3
+
+        startGame()
 
     }
 
@@ -123,14 +134,16 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun PlayAgain(view: View?) {
+    fun playAgain(view: View?) {
+        onBackPressed()
         points = 0
         totalQuestions = 0
         ScoreTextView!!.text = "$points/$totalQuestions"
         countDownTimer!!.start()
+
     }
 
-    private fun start() {
+    private fun startGame() {
         NextQuestion(cals)
         countDownTimer = object : CountDownTimer(10000, 500) {
             override fun onTick(p0: Long) {
@@ -139,14 +152,19 @@ class MainActivity : AppCompatActivity() {
 
             override fun onFinish() {
                 TimeTextView!!.text = "Konec času"
-                openDilog()
+                openDialog()
             }
         }.start()
     }
 
-    private fun openDilog() {
+    private fun openDialog() {
+        bindingWin = WinLayoutBinding.inflate(layoutInflater)
+        setContentView(bindingWin.root)
+
         val inflate = LayoutInflater.from(this)
         var winDialog = inflate.inflate(R.layout.win_layout, null)
+
+
         FinalScoreTextView = winDialog.findViewById(R.id.FinalScoreTextView)
         val btnPlayAgain = winDialog.findViewById<Button>(R.id.buttonPlayAgain)
         val btnBack = winDialog.findViewById<Button>(R.id.buttonBack)
@@ -155,7 +173,7 @@ class MainActivity : AppCompatActivity() {
         dialog.setView(winDialog)
         FinalScoreTextView!!.text = "$points/$totalQuestions"
         btnPlayAgain.setOnClickListener {
-            PlayAgain(it)
+            playAgain(it)
         }
         btnBack.setOnClickListener {
             onBackPressed()
@@ -164,4 +182,11 @@ class MainActivity : AppCompatActivity() {
         showDialog.show()
     }
 
+    override fun onBackPressed() {
+        if (supportFragmentManager.backStackEntryCount > 0) {
+            supportFragmentManager.popBackStack()
+        } else {
+            super.onBackPressed()
+        }
+    }
 }
