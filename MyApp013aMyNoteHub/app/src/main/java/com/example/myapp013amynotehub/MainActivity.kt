@@ -1,7 +1,9 @@
 package com.example.myapp013amynotehub
 
 import android.os.Bundle
+import android.widget.ArrayAdapter
 import android.widget.EditText
+import android.widget.Spinner
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -71,19 +73,29 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    /*private fun getSampleNotes(): List<Note> {
-        // Testovací seznam poznámek
-        return listOf(
-            Note(title = "Poznámka 1", content = "Obsah první poznámky"),
-            Note(title = "Poznámka 2", content = "Obsah druhé poznámky"),
-            Note(title = "Poznámka 3", content = "Obsah třetí poznámky")
-        )
-    }*/
+//    private fun getSampleNotes(): List<Note> {
+//        // Testovací seznam poznámek
+//        return listOf(
+//            Note(title = "Poznámka 1", content = "Obsah první poznámky"),
+//            Note(title = "Poznámka 2", content = "Obsah druhé poznámky"),
+//            Note(title = "Poznámka 3", content = "Obsah třetí poznámky")
+//        )
+//    }
 
     private fun showAddNoteDialog() {
         val dialogView = layoutInflater.inflate(R.layout.dialog_add_note, null)
         val titleEditText = dialogView.findViewById<EditText>(R.id.editTextTitle)
         val contentEditText = dialogView.findViewById<EditText>(R.id.editTextContent)
+        val categorySpinner = dialogView.findViewById<Spinner>(R.id.spinnerCategory)
+
+        // Získání všech kategorií z databáze
+        lifecycleScope.launch {
+            val categories = database.categoryDao().getAllCategories().first()
+            val categoryNames = categories.map { it.name }.toTypedArray()
+            categorySpinner.adapter =
+                ArrayAdapter(this@MainActivity, android.R.layout.simple_spinner_item, categoryNames)
+            categorySpinner.setSelection(0)
+        }
 
         val dialog = AlertDialog.Builder(this)
             .setTitle("Přidat poznámku")
