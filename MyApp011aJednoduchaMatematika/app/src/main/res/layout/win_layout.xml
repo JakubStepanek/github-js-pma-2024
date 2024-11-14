@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:text="Konec Hry"
+        android:text="@string/game_over"
         android:textColor="#9A1818"
         android:textSize="36sp" />
 
@@ -20,7 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
-        android:text="Získané body: "
+        android:text="@string/gained_points"
         android:textColor="#9A1818"
         android:textSize="24sp" />
 
@@ -31,7 +31,7 @@
         android:layout_marginTop="40dp"
         android:layout_marginBottom="40dp"
         android:background="#FFE082"
-        android:text="0 / 0"
+        android:text="@string/starter_points"
         android:textColor="#9A1818"
         android:textSize="30sp" />
 
@@ -48,7 +48,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:backgroundTint="#FF1B69"
-            android:text="Hrát znovu"
+            android:text="@string/play_again"
             android:textAllCaps="false" />
 
         <Button
@@ -57,7 +57,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:backgroundTint="#84E5ED"
-            android:text="Zpět"
+            android:text="@string/go_back"
             android:textAllCaps="false" />
 
 

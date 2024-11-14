@@ -12,7 +12,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Prostě budete počítat a žádný řeči..."
+        android:text="@string/app_starter_text"
         android:textAlignment="center"
         android:textColor="#1454AE"
         android:textSize="30sp"

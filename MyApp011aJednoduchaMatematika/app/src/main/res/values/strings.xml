@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">MyApp011aJednoduchaMatematika</string>
+    <string name="game_over">Konec Hry</string>
+    <string name="gained_points">Získané body: </string>
+    <string name="starter_points">0 / 0</string>
+    <string name="play_again">Hrát znovu</string>
+    <string name="go_back">Zpět</string>
+    <string name="button">Button</string>
+    <string name="app_starter_text">Prostě budete počítat a žádný řeči...</string>
+    <string name="initial_example">29 + 12</string>
+    <string name="initial_time">30s</string>
+    <string name="lets_start">Jdeme na to!</string>
+
+
 </resources>

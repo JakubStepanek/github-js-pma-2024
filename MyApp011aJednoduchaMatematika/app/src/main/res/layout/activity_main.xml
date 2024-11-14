@@ -14,7 +14,7 @@
         android:fontFamily="sans-serif-smallcaps"
         android:onClick="optionSelect"
         android:tag="0"
-        android:text="Button"
+        android:text="@string/button"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TimeTextView" />
@@ -27,7 +27,7 @@
         android:fontFamily="sans-serif-smallcaps"
         android:onClick="optionSelect"
         android:tag="1"
-        android:text="Button"
+        android:text="@string/button"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ScoreTextView" />
@@ -40,7 +40,7 @@
         android:fontFamily="sans-serif-smallcaps"
         android:onClick="optionSelect"
         android:tag="2"
-        android:text="Button"
+        android:text="@string/button"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button1" />
@@ -53,7 +53,7 @@
         android:fontFamily="sans-serif-smallcaps"
         android:onClick="optionSelect"
         android:tag="3"
-        android:text="Button"
+        android:text="@string/button"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button0" />
@@ -64,7 +64,7 @@
         android:layout_height="wrap_content"
         android:background="#4CAF50"
         android:padding="10dp"
-        android:text="0/0"
+        android:text="@string/starter_points"
         android:textColor="#F4F0F0"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -76,7 +76,7 @@
         android:layout_height="wrap_content"
 
         android:padding="20dp"
-        android:text="29 + 12"
+        android:text="@string/initial_example"
         android:textColor="#322E2E"
         android:textSize="36sp"
         app:layout_constraintEnd_toStartOf="@+id/ScoreTextView"
@@ -90,7 +90,7 @@
 
         android:background="#FF9800"
         android:padding="10dp"
-        android:text="30s"
+        android:text="@string/initial_time"
         android:textColor="#FDFCFC"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -103,7 +103,7 @@
 
 
         android:padding="20dp"
-        android:text="Jdeme na to!"
+        android:text="@string/lets_start"
         android:textColor="#555555"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"

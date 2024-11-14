@@ -66,12 +66,15 @@ class MainActivity : AppCompatActivity() {
                     "+" -> {
                         answers.add(a + b)
                     }
+
                     "-" -> {
                         answers.add(a - b)
                     }
+
                     "*" -> {
                         answers.add(a * b)
                     }
+
                     "/" -> {
                         try {
                             answers.add(a / b)
