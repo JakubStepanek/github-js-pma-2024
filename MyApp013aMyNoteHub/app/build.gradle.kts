@@ -16,6 +16,7 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        sourceSets["main"].java.srcDirs("build/generated/ksp/main/kotlin")
     }
 
     buildTypes {
@@ -53,9 +54,6 @@ dependencies {
     val room_version = "2.6.1"
 
     implementation("androidx.room:room-runtime:$room_version")
-
-    // If this project uses any Kotlin source, use Kotlin Symbol Processing (KSP)
-    // See [Add the KSP plugin to your project](https://developer.android.com/build/migrate-to-ksp#add-ksp)
+    implementation("androidx.room:room-ktx:$room_version")
     ksp("androidx.room:room-compiler:$room_version")
-    implementation("adnroidx.room:room-ktx:$room_version")
 }
