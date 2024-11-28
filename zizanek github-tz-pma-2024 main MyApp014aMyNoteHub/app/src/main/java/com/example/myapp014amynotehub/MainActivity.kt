@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity() {
         //binding.recyclerView.adapter = noteAdapter
 
         // Vložení testovacích dat
-       // insertSampleNotes()
+        // insertSampleNotes()
 
 
         // Nastavení uživatelského rozhraní (filtry, řazení atd.)
@@ -158,15 +158,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    /*private fun getSampleNotes(): List<Note> {
-        // Testovací seznam poznámek
-        return listOf(
-            Note(title = "Poznámka 1", content = "Obsah první poznámky"),
-            Note(title = "Poznámka 2", content = "Obsah druhé poznámky"),
-            Note(title = "Poznámka 3", content = "Obsah třetí poznámky")
-        )
-    }*/
-
     private fun deleteNote(note: Note) {
         lifecycleScope.launch {
             database.noteDao().delete(note)  // Smazání poznámky z databáze
@@ -178,6 +169,22 @@ class MainActivity : AppCompatActivity() {
         val dialogView = layoutInflater.inflate(R.layout.dialog_add_note, null)
         val titleEditText = dialogView.findViewById<EditText>(R.id.editTextTitle)
         val contentEditText = dialogView.findViewById<EditText>(R.id.editTextContent)
+        val spinnerCategory = dialogView.findViewById<Spinner>(R.id.spinnerCategory)
+
+        // Načtení kategorií do Spinneru a nastavení aktuální kategorie
+        lifecycleScope.launch {
+            val categories = database.categoryDao().getAllCategories().first()
+            val categoryNames = categories.map { it.name }
+            val categoryAdapter =
+                ArrayAdapter(this@MainActivity, android.R.layout.simple_spinner_item, categoryNames)
+            categoryAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            spinnerCategory.adapter = categoryAdapter
+            val currentCategory = categories.find { it.id == note.categoryId }?.name
+            val categoryPosition = categoryNames.indexOf(currentCategory)
+            if (categoryPosition >= 0) {
+                spinnerCategory.setSelection(categoryPosition)
+            }
+        }
 
         // Předvyplnění stávajících dat poznámky
         titleEditText.setText(note.title)
@@ -187,14 +194,17 @@ class MainActivity : AppCompatActivity() {
             .setTitle("Upravit poznámku")
             .setView(dialogView)
             .setPositiveButton("Uložit") { _, _ ->
-                val updatedTitle = titleEditText.text.toString()
-                val updatedContent = contentEditText.text.toString()
+                val title = titleEditText.text.toString()
+                val content = contentEditText.text.toString()
+                val selectedCategory =
+                    spinnerCategory.selectedItem.toString()  // Získáme vybranou kategorii
 
-                // Aktualizace poznámky v databázi
+                // Najdeme ID vybrané kategorie
                 lifecycleScope.launch {
-                    val updatedNote = note.copy(title = updatedTitle, content = updatedContent)
-                    database.noteDao().update(updatedNote)  // Uloží aktualizovanou poznámku
-                    loadNotes()  // Načte a aktualizuje seznam poznámek
+                    val category = database.categoryDao().getCategoryByName(selectedCategory)
+                    if (category != null) {
+                        addNoteToDatabase(title, content, category.id)
+                    }
                 }
             }
             .setNegativeButton("Zrušit", null)
