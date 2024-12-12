@@ -1,4 +1,4 @@
-package com.example.myapp015asharedtasklist
+package com.example.myapp014asharedtasklist
 
 data class Task(
     val id: String = "", // Identifikátor úkolu (pro Firestore)

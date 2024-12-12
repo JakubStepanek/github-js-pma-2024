@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "MyApp015aSharedTaskList"
+rootProject.name = "MyApp014aSharedTaskList"
 include(":app")
  

@@ -1,9 +1,9 @@
-package com.example.myapp015asharedtasklist
+package com.example.myapp014asharedtasklist
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.myapp015asharedtasklist.databinding.ItemTaskBinding
+import com.example.myapp014asharedtasklist.databinding.ItemTaskBinding
 
 class TaskAdapter(
     private val tasks: List<Task>, // Seznam úkolů

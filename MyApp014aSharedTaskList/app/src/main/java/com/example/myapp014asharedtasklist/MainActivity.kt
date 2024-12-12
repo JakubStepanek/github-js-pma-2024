@@ -1,4 +1,4 @@
-package com.example.myapp015asharedtasklist
+package com.example.myapp014asharedtasklist
 
 import android.os.Bundle
 import android.text.InputType
@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.myapp015asharedtasklist.databinding.ActivityMainBinding
+import com.example.myapp014asharedtasklist.databinding.ActivityMainBinding
 import com.google.firebase.FirebaseApp
 import com.google.firebase.firestore.FirebaseFirestore
 
