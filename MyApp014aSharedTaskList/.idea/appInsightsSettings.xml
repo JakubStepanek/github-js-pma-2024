@@ -9,9 +9,9 @@
               <option name="connection">
                 <ConnectionSetting>
                   <option name="appId" value="com.example.myapp014asharedtasklist" />
-                  <option name="mobileSdkAppId" value="1:203311490322:android:4b39d13646d00826a2ffcb" />
-                  <option name="projectId" value="sharedtasklist-aa323" />
-                  <option name="projectNumber" value="203311490322" />
+                  <option name="mobileSdkAppId" value="1:738805377081:android:103b3d0453db187a6085e8" />
+                  <option name="projectId" value="sharedtasklist-c92ae" />
+                  <option name="projectNumber" value="738805377081" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />
