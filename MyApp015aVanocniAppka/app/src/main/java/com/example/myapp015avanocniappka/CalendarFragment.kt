@@ -77,9 +77,9 @@ class CalendarFragment : Fragment() {
      */
     private fun isDayAvailable(day: Int): Boolean {
         // test only (opens all)
-        //return true
-        val currentDay = java.util.Calendar.getInstance().get(java.util.Calendar.DAY_OF_MONTH)
-        return currentDay >= day
+        return true
+        //val currentDay = java.util.Calendar.getInstance().get(java.util.Calendar.DAY_OF_MONTH)
+        //return currentDay >= day
 
     }
 }

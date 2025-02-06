@@ -54,7 +54,6 @@ class DayDetailFragment : Fragment() {
 
         // Nastavíme text a obrázek
         tvContent.text = "${contentItem.title}\n\n${contentItem.text}"
-        // Pro zobrazení obrázku předpokládáme, že obrázky máte v adresáři res/drawable.
         // Název obrázku bez přípony použijeme k získání resource ID.
         val resourceId = resources.getIdentifier(
             contentItem.imageName.substringBeforeLast('.'),
